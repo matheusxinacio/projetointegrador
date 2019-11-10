@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Pega a Visão</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <title>Pega a Visão</title>
 	<link rel="stylesheet" href="index.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,6 +14,91 @@
 
 </head>
 <body>
+	<header class="cabecalho container">
+		<a href="index.html"><h1 class="logo">Pega a Visão</h1></a>
+		<button class="bt-menu bg-gradient"><i class="fa fa-bars fa-lg"> </i></button>
+		<nav class="menu">
+			<a class="bt-close"><i class="fa fa-times"></i></a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Nossos Artistas</a></li>
+					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="#">Quem Somos?</a></li>
+					<li><a href="#">Contato</a></li>
 
+				</ul>
+		</nav>
+	</header>
+	<div class="banner container">
+		<div class="title">
+			<h2> APOIE A CENA LOCAL! </h2>
+			<h3>Tenha a chance de oferecer oportunidades contratando seu artista de rua favorito. </h3>
+		</div>
+		<div class="buttons">
+			<button class="bt bt-cadastro bg-white radius">Cadastrar<i class="fa fa-arrow-circle-right"></i></button>
+			<button class=" bt bt-sobre bg-black radius">Sobre<i class="fa fa-question-circle"></i></button>
+
+		</div>
+	</div>
+	<main class="artistas container">
+		<article class="artista bg-white radius">
+			<a href=""><img src="../Pega-a-Visão/img/obra.jpg" alt="Artistas do Selo"></a>
+			<div class="inner">
+				<a href="#">Nossos Artistas</a>
+				<h4>Cantores, Atores e Pintores </h4>
+				<p> Esqueceu o nome do artista que viu ultimamente? Ache-o aqui! </p>
+			</div>
+		</article>
+		<article class="artista bg-white radius">
+			<a href=""><img src="../Pega-a-Visão/img/contrate.png" alt="Michael Jackson"></a>
+			<div class="inner">
+				<a href="#">Contrate!</a>
+				<h4>Contrate o artista perfeito para o seu evento. </h4>
+				<p>Clique aqui para saber mais sobre como contratar um artista da nossa plataforma!</p>
+			</div>
+		</article>
+		<article class="artista bg-white radius">
+			<a href=""><img src="../Pega-a-Visão/img/quem-somos.jpg" alt="interrogação"></a>
+			<div class="inner">
+				<a href="#">Quem somos?</a>
+				<h4>Saiba mais sobre a Pega A Visão! </h4>
+				<p>Clique aqui para pegar a visão sobre nós.</p>
+			</div>
+		</article>
+	</main>
+	<!-- NEWSLETTER-->
+	<section class="newsletter container bg-black">
+		<h2> Inscreva-se! </h2>
+		<h3> Receba novidades sobre novos artistas da plataforma!</h3>
+		<form>
+			<input class="bg-black radius" type="email" name="email" placeholder="Seu email">
+			<button class="bg-white radius">Cadastrar</button>
+		</form>
+
+	<!-- rodapé -->
+	<footer class="rodape container bg-gradient">
+		<div class="icones">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-google"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		<p class="copyright">
+			Copyright © PegaVisão 2019. All Rights Reserved.
+		</p>
+	</footer>	
+		
+	</section>
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	   <script>
+		   $(".bt-menu").click(function(){
+		    $(".menu").show();
+		   });
+		   $(".bt-close").click(function(){
+		    $(".menu").hide();
+		   });
+	  </script>
 </body>
 </html>
