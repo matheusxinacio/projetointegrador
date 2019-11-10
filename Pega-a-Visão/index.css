@@ -13,7 +13,7 @@
 
 body 
 {
-	background-color: : #000;
+	background-color: #f5f5f5;
 }
 a
 {
@@ -167,7 +167,6 @@ img
 }
 .bt-sobre
 {	
-	
 	color: #fff;
 	margin-top: 2%;
 }
@@ -224,7 +223,7 @@ img
 }
 .newsletter form 
 {
-margin-top: 2%;
+	margin-top: 2%;
 }
 .newsletter input 
 {
@@ -272,7 +271,9 @@ margin-top: 2%;
 	.bt
 	{
 		font-size: 2em;
-	}	
+	}
+
+
 }
 /* Tablets */
 @media screen and (min-width: 768px)
@@ -308,6 +309,83 @@ margin-top: 2%;
 		float: right;
 		margin-top: 0;
 	}
+
+	/* tive que replicar o código do comportamento de 960px aqui pois meu monitor tem a resolução de 768 apenas */
+	.title
+	{
+		width: 70%;
+		float: left;
+		text-align: left;
+	}
+	.title h2
+	{
+		font-size: 3em;	
+	}
+	.title h3
+	{
+		font-size: 2em;
+	}
+	.buttons
+	{
+		width: 30%;
+		float: right;
+		margin-top: 0;
+	}
+	.artista
+	{
+		width: 32%;
+	}
+	.artista:nth-child(2)
+	{
+		margin-right: 2%;
+	}
+	.artista:nth-child(3)
+	{
+		margin-right: 0;
+	}
+	.newsletter button
+	{
+		width: 20%;
+		float: none;
+	}
+
+	/* mesma coisa para o menu */
+
+	.bt-menu
+	{
+		display: none;
+	}
+	.bt-close
+	{
+		display: none;
+	}
+	.menu 
+	{
+		width: auto;
+		height: 56px;
+		line-height: 56px;
+		float: right;
+		background-color: #f5f5f5;
+		display: block !important;
+		position: static;
+	}
+	.menu li 
+	{
+		padding: 0;
+		float: left;
+	}
+	.menu li a
+	{
+		color: #000;
+		font-size: 1em;
+		padding: 15px;
+	}
+	.menu li a:hover
+	{
+		border: none;
+		color:#fff; 
+		background:#593557;
+	}
 }
 /* Tablets e Desktops */
 @media screen and (min-width: 960px;)
@@ -318,10 +396,76 @@ margin-top: 2%;
 		float: left;
 		text-align: left;
 	}
+	.title h2
+	{
+		font-size: 3em;	
+	}
+	.title h3
+	{
+		font-size: 2em;
+	}
 	.buttons
 	{
 		width: 30%;
 		float: right;
 		margin-top: 0;
+	}
+	.artista
+	{
+		width: 32%;
+	}
+	.artista:nth-child(2)
+	{
+		margin-right: 2%;
+	}
+	.artista:nth-child(3)
+	{
+		margin-right: 0;
+	}
+	.newsletter button
+	{
+		width: 20%;
+		float: none;
+	}
+}
+
+/* Dispositivos grandes */
+@media screen and (min-width: 1280px)
+{
+	.bt-menu
+	{
+		display: none;
+	}
+	.bt-close
+	{
+		display: none;
+	}
+	.menu 
+	{
+		width: auto;
+		height: 56px;
+		line-height: 56px;
+		float: right;
+		background-color: #f5f5f5;
+		display: block !important;
+		position: static;
+	}
+	.menu li 
+	{
+		padding: 0;
+		float: left;
+	}
+	.menu li a
+	{
+		color: #000;
+		border-radius: 10px;
+		font-size: 1em;
+		padding: 15px;
+	}
+	.menu li a:hover
+	{
+		border: none;
+		color:#fff; 
+		background:#593557;
 	}
 }
