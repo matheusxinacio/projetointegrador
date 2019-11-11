@@ -81,6 +81,7 @@ img
 	
 }
 
+
 /* MENU */
 .menu
 {
@@ -125,6 +126,12 @@ img
 .banner
 {
 	background: url(../Pega-a-Visão/img/banner.jpg) no-repeat fixed;
+	background-position: center;
+}
+.banner-artistas
+{
+		background: url(../Pega-a-Visão/img/banner-artistas.jpg) no-repeat fixed;
+		background-position: bottom;
 }
 .title
 {
@@ -143,6 +150,17 @@ img
 	color: #d500ea;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.title-artistas h2
+{
+	font-size: 2.5em;
+	color: #b19cd9;
+	font-weight: 700;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	float: left;
+	display: block;
+}
+
+
 .buttons
 {
 	width: 100%;
