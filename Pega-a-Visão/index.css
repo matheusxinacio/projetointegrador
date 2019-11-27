@@ -128,11 +128,29 @@ img
 	background: url(../Pega-a-Visão/img/banner.jpg) no-repeat fixed;
 	background-position: center;
 }
+/* BANNER PAG ARTISTAS */
 .banner-artistas
 {
 		background: url(../Pega-a-Visão/img/banner-artistas.jpg) no-repeat fixed;
 		background-position: bottom;
 }
+/* BANNER PAGCADASTRO */
+.banner-cadastro
+{
+	background: url(../Pega-a-Visão/img/banner-cadastro.jpg) no-repeat fixed;
+}
+/* BANNER PAG SOBRE */
+.banner-sobre
+{
+		background: url(../Pega-a-Visão/img/jokersobre.jpg) no-repeat fixed;
+		background-position: center;
+}
+
+.mainsobre
+{
+	background-color: #4d4e4f;
+}
+/*=================================*/
 
 .title
 {
@@ -424,11 +442,7 @@ img
 	}
 }
 
-/* CADASTRO */
-.banner-cadastro
-{
-	background: url(../Pega-a-Visão/img/banner-cadastro.jpg) no-repeat fixed;
-}
+
 .input-form
 {
 	padding: 5px;
