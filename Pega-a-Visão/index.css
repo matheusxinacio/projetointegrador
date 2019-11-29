@@ -151,7 +151,56 @@ img
 	background-color: #4d4e4f;
 }
 /*=================================*/
+/* BARRA DE PESQUISA */
+.search-box
+{
+	
+	border:1px solid;
+	border-color: white;
+	padding: 6px;
+	margin-top: 100px;
+	border-radius: 10px;
+	background-color: #A020F0;
+}
+.search-bt
+{
+	font: bold 11px Arial;
+  	text-decoration: none;
+  	background-color: #EEEEEE;
+  	color: #333333;
+  	width: 60px;
+  	height: auto;
+  	padding: 2px 6px 2px 6px;
+  	border-top: 1px solid #CCCCCC;
+  	border-right: 1px solid #333333;
+  	border-bottom: 1px solid #333333;
+  	border-left: 1px solid #CCCCCC;
+  	cursor: pointer;
+  	border-radius: 50px;
+	
+}
+.search-txt
+{
+	padding: 2px;
+	float: left;
+	width: 80%;
+	background:white;
+	border-radius: 10px;
+	color: black; 
 
+}
+/* =========================== */
+/* resultado pesquisa */
+.resultadopesquisa
+{
+	border:1px solid;
+	border-color: black;
+	padding: 5px;
+	margin-top: 10px;
+	border-radius: 10px;
+	background-color:#f5f5f5;
+}
+/* ==================== */
 .title
 {
 	width: 100%;

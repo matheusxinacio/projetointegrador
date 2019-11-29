@@ -25,37 +25,43 @@
 					<li><a href="#">Contratar um Artista</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
 					<li><a href="#">Contato</a></li>
-
 				</ul>
 		</nav>
 	</header>
 	<div class="banner-artistas container">
 		<div class="title-artistas">
-			<h2> Artistas parceiros: Pega visão de quem tá fechado com a gente. </h2>
-			
+			<h2> Artistas parceiros: Pega visão de quem tá fechado com a gente. </h2>	
 		</div>
+		<div class="search-box">
+			<input id="busca" class="search-txt" type="text" placeholder="Pesquise seu artista aqui">
+			<button class="search-bt" onclick="buscarSite()"> <i class="fa fa-search"></i></button>	
+		</div>
+		<div class="resultadopesquisa">
+			<h2>Resultado da Pesquisa</h2>
+			<p id="resultado"></p>
+		</div>		
 	</div>
 	<main class="artistas container">
 		<article class="artista bg-white radius">
-			<a href=""><img src="../Pega-a-Visão/img/da20.jpg" alt="Artistas do Selo"></a>
+			<a href="perfilLeo.html"><img src="../Pega-a-Visão/img/da20.jpg" alt="Artistas do Selo"></a>
 			<div class="inner">
-				<a href="#">Leonardo da Vinci</a>
+				<a href="perfilLeo.html">Leonardo da Vinci</a>
 				<h4>Gênio Renascentista </h4>
-				<p> LeozinDa20, como era conhecido, iniciou sua carreira artística com a gente. Confira seu perfil. </p>
+				<p> LeozinDa20, como era conhecido, iniciou sua carreira artística com a gente. Confira seu perfil.</p>
 			</div>
 		</article>
 		<article class="artista bg-white radius">
-			<a href=""><img src="../Pega-a-Visão/img/mj.jpg" alt="Michael Jackson"></a>
+			<a href="perfilMj.html"><img src="../Pega-a-Visão/img/mj.jpg" alt="Michael Jackson"></a>
 			<div class="inner">
-				<a href="#">Michael Jackson</a>
+				<a href="perfilMj.html">Michael Jackson</a>
 				<h4>Considerado por muitos o maior artista de todos os tempos. </h4>
 				<p>Michael Jackson consolidou sua carreira na música com a gente antes de se tornar o Rei do Pop, assim como os outros quatro integrantes do antigo The Jackson 5. Confira seu perfil.</p>
 			</div>
 		</article>
 		<article class="artista bg-white radius">
-			<a href=""><img src="../Pega-a-Visão/img/rihanna.jpg" alt="interrogação"></a>
+			<a href="perfilRiri.html"><img src="../Pega-a-Visão/img/rihanna.jpg" alt="Rihanna"></a>
 			<div class="inner">
-				<a href="#">Rihanna</a>
+				<a href="perfilRiri.html">Rihanna</a>
 				<h4>A mulher mais rica do mundo da música. </h4>
 				<p>Rihanna, que também faz parte do PegaAVisão, se tornou a mulher mais rica do mundo da música com a nossa ajuda.</p>
 			</div>
@@ -88,13 +94,8 @@
 
 	<!-- JQUERY -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <script>
-		   $(".bt-menu").click(function(){
-		    $(".menu").show();
-		   });
-		   $(".bt-close").click(function(){
-		    $(".menu").hide();
-		   });
-	  </script>
+	<script src="js/jquery.js"></script>
+	<script src="js/script.js"></script>
+
 </body>
 </html>

@@ -27,44 +27,42 @@
 					<li><a href="#">Contato</a></li>
 				</ul>
 		</nav>
-
-
 	</header>
-	<div class="banner container">
-		<div class="title">
-			<h2> APOIE A CENA LOCAL! </h2>
-			<h3>Tenha a chance de oferecer oportunidades contratando seu artista de rua favorito. </h3>
+	<div class="banner-artistas container">
+		<div class="title-artistas">
+			<h2> Artistas parceiros: Pega visão de quem tá fechado com a gente. </h2>	
 		</div>
-		<div class="buttons">
-			<a href="cadastro.html"><button class="bt bt-cadastro bg-white radius">Cadastrar<i class="fa fa-arrow-circle-right"></i></button></a>
-			<a href="sobre.html"><button class=" bt bt-sobre bg-black radius">Sobre<i class="fa fa-question-circle"></i></button>
-		</div></a>
+		<div class="search-box">
+			<input id="busca" class="search-txt" type="text" placeholder="Pesquise seu artista aqui">
+			<button class="search-bt" onclick="buscarSite()"> <i class="fa fa-search"></i></button>	
+		</div>
+		<div class="resultadopesquisa">
+			<h2>Resultado da Pesquisa</h2>
+			<p id="resultado"></p>
+		</div>
+		
 	</div>
 	<main class="artistas container">
 		<article class="artista bg-white radius">
-			<a href="artistas.html"><img src="../Pega-a-Visão/img/donald.jpg" alt="Artistas do Selo"></a>
+			<a href=""><img src="../Pega-a-Visão/img/da20.jpg" alt="Artistas do Selo"></a>
 			<div class="inner">
-				<a href="artistas.html">Nossos Artistas</a>
-				<h4>Cantores, Atores e Pintores </h4>
-				<p> Esqueceu o nome do artista que viu ultimamente? Ache-o aqui! </p>
+				<a href="#">Leonardo da Vinci</a>
+				<h4>Gênio Renascentista </h4>
+				<p> LeozinDa20, como era conhecido, iniciou sua carreira artística com a gente.</p>
 			</div>
 		</article>
 		<article class="artista bg-white radius">
-			<a href=""><img src="../Pega-a-Visão/img/contrate.png" alt="Michael Jackson"></a>
-			<div class="inner">
-				<a href="#">Contrate!</a>
-				<h4>Contrate o artista perfeito para o seu evento. </h4>
-				<p>Clique aqui para saber mais sobre como contratar um artista da nossa plataforma!</p>
-			</div>
+			<div class="inner"><h2>Leonardo da Vinci</h2>
+			<p> Leonardo da Vinci é lembrado por ser um dos maiores gênios da história da humanidade. As suas contribuições ultrapassaram o ramo das artes e suas obras, como A Última Ceia e Mona Lisa, são algumas das pinturas mais famosas e reproduzidas de todos os tempos.</p><br>
+			<h2>Origem</h2>
+			<p>Ele nasceu em 15 de abril de 1452, na Vila de Vinci na Toscana, na Itália. Leonardo era filho da camponesa Caterina Lippi e do tabelião Piero da Vinci, que não eram casados. Foi educado por pessoas próximas, como a madrasta e a avó.
+
+			Vale destacar que, na verdade, Da Vinci não é o sobrenome de Leonardo. Usa-se essa denominação em razão de “Vinci” ser o nome do vilarejo onde ele nasceu, ou seja, é como se fosse “Leonardo da Vila da Vinci”.
+
+			Segundo estudos, ele tinha cabelos louros, olhos azuis, nariz aquilino e era canhoto. Quando jovem, muitos consideravam-no dono de uma incomparável beleza física. Porém, a imagem que a maioria guarda é do artista mais velho, como a do desenho feito por Cosomo Colombini em 1812.</p></div>
 		</article>
-		<article class="artista bg-white radius">
-			<a href="sobre.html"><img src="../Pega-a-Visão/img/quem-somos.jpg" alt="interrogação"></a>
-			<div class="inner">
-				<a href="sobre.html">Missão, Visão e Valores.</a>
-				<h4>Saiba mais sobre a Pega A Visão! </h4>
-				<p>Clique aqui para pegar a visão sobre nós e entender um pouco melhor nosso objetivo.</p>
-			</div>
-		</article>
+
+		
 	</main>
 	<!-- NEWSLETTER-->
 	<section class="newsletter container bg-black">
@@ -93,6 +91,7 @@
 	<!-- JQUERY -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/jquery.js"></script>
+	<script src="js/script.js"></script>
 
 </body>
 </html>
