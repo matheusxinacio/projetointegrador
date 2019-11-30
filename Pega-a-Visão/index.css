@@ -523,7 +523,7 @@ img
 {
 	display: block;
 }
-#btform
+.btform
 {
 	width: 100px;
 	margin-top: 25px;
@@ -534,11 +534,11 @@ img
 	cursor: pointer;
 	display: block;
 }
-#btform:hover
+.btform:hover
 {
 	background-color: #593557 ;
 }
-#btform:active
+.btform:active
 {	
 	background-color: #000;
 }

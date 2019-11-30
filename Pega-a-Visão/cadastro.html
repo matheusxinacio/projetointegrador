@@ -12,6 +12,47 @@
 	<meta name="author" content="Alunos BSI">
 	<link rel="icon" href="img/icon.png">
 
+        <script>
+            
+            if (!localStorage.getItem("Clientes")){
+                localStorage.setItem("Clientes", "[]");
+            }
+            
+            
+            function cadastrar(){
+                let cadastros= JSON.parse(localStorage.getItem("Clientes"));
+                let dados={};
+                dados.nome=document.getElementById("nome").value;
+                dados.sobrenome=document.getElementById("sobrenome").value;
+                dados.idade = document.getElementById("idade").value;
+                dados.email=document.getElementById("email").value;
+                dados.tipo = document.getElementById("tipoUser").value;
+                cadastros.push(dados);
+ 
+                let myJSON= JSON.stringify(cadastros);
+                localStorage.setItem("Clientes", myJSON);
+             console.log(cadastros);   
+                alert("Cadastro Confirmado!")
+            }
+            function recuperarDados(){
+                let clientes= localStorage.getItem("Clientes");
+                if(clientes){
+                   clientes = JSON.parse(clientes); 
+
+                    let texto="<ul>";
+                    for (let i=0; i<clientes.length; i++){
+                        texto+= "<li>" + clientes[i].nome +" "+ clientes[i].sobrenome +", " + clientes[i].tipo + "</li>";
+                                           }
+                    document.getElementById("resposta").innerHTML= texto + "</ul>";
+
+                }
+                else{
+                    document.getElementById("resposta").innerHTML="Nenhum cliente cadastrado :(";
+                }
+            }
+
+        </script>
+
 </head>
 <body>
 	<header class="cabecalho container">
@@ -52,26 +93,30 @@
 					<input id="nome" class="input-form" type="text">
 					<label class="labelform" for="sobrenome">Sobrenome:</label>
 					<input id="sobrenome" class="input-form" type="text">
-					<label class="labelform" for="datanasc">Data de Nascimento:</label>
-					<input id="datanasc" class="input-form" type="date">
+					<label for="idade">Idade:</label>
+					<input class = "input-form" type="text" id="idade">
 
 					<label class="labelform" for="email">Email:</label>
-					<input id="email"class="input-form" type="email" placeholder="xxxx@dom.com">
+					<input  class="input-form"id="email"class="input-form" type="text" placeholder="xxxx@dom.com">
 
-					<label class="labelform">Qual seu objetivo no nosso site?</label>
-					
-					<input  id="tipo1" class="input-form-radio" name="user" type="radio">Contratar
-						<i class="fa fa-handshake-o" aria-hidden="true"></i>
-					<input  id="tipo2" class="input-form-radio" name="user" type="radio">Afiliar
-						<i class="fa fa-address-card" aria-hidden="true"></i>
-					<input  id="tipo3" class="input-form-radio" name="user" type="radio">Buscar
-						<i class="fa fa-search" aria-hidden="true"></i>
+					<label class="labelform" for="tipoUser">Você é um artista ou contratante?</label>
+					<input  class="input-form" type="text" id="tipoUser">
 
-					<button id="btform" type="button">Cadastrar</button>
 
+					<button class="btform" onclick="cadastrar()" type="button">Cadastrar</button>
 				</form>
 			</div>
 		</article>
+		<article class="artista bg-white radius">
+			<div class="inner">
+				<h2>Confirme seus dados cadastrados:</h2>
+				<button class="btform" onclick="recuperarDados()">Consultar</button><br>
+				<p id="resposta"></p>
+
+			</div>
+
+		</article>
+
 	
 	</main>
 	<!-- NEWSLETTER-->
