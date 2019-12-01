@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Pega a Visão</title>
+	<link rel="stylesheet" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta name="keywords" content="Agência Digital, divulgação, artistas, sites">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Alunos BSI">
+	<link rel="icon" href="img/icon.png">
+
+
+
+
+</head>
+<body>
+	<header class="cabecalho container">
+		<a href="index.html"><h1 class="logo">Pega a Visão</h1></a>
+		<button class="bt-menu bg-gradient"><i class="fa fa-bars fa-lg"> </i></button>
+		<nav class="menu">
+			<a class="bt-close"><i class="fa fa-times"></i></a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="artistas.html">Nossos Artistas</a></li>
+					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="sobre.html">Quem Somos?</a></li>
+					<li><a href="#">Contato</a></li>
+				</ul>
+		</nav>
+
+
+	</header>
+	<div class="banner-cadastro container">
+		<div class="title">
+			<h2> Pesquisa </h2>
+		</div>
+	</div>
+	<main class="artistas container">
+		<article class="artista bg-white radius">
+			<img src="../Pega-a-Visão/img/obra.jpg" alt="Artistas do Selo">
+			<div class="inner">
+				<h2>Pesquise nossos usuários!</h2>
+				</div>
+		</article>
+		<article class="artista bg-white radius">
+			
+			<div class="inner">
+				<h2>Pesquise aqui usuários do nosso site.</h2>
+
+					<p>Por nome: <input class="input-form" type="text" id="nome"></p>
+			        <p>Por email: <input class="input-form" type="text" id="email"></p>
+			       
+			        <button  class="btform" onclick="recuperarDados()">ver todos os cadastrados:</button>
+			        <p id="resposta"></p>
+
+			        <table border="1" id="tabela">
+			            <tr>
+			                <th>Nome</th>
+			                <th>Idade</th>
+			                <th>Email</th>
+			            </tr>
+			    
+			        </table>
+			</div>
+		</article>
+
+	
+	</main>
+	<!-- NEWSLETTER-->
+	<section class="newsletter container bg-black">
+		<h2> Inscreva-se! </h2>
+		<h3> Receba novidades sobre novos artistas da plataforma!</h3>
+		<form>
+			<input class="bg-black radius" type="email" name="email" placeholder="Seu email">
+			<button class="bg-white radius">Cadastrar</button>
+		</form>
+
+	<!-- rodapé -->
+	<footer class="rodape container bg-gradient">
+		<div class="icones">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-google"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		<p class="copyright">
+			Copyright © PegaVisão 2019. All Rights Reserved.
+		</p>
+	</footer>		
+	</section>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+		  if (!localStorage.getItem("cadastros")){
+                localStorage.setItem("cadastros", "[]");
+            }
+
+            function recuperarDados(){
+                let nome= document.getElementById("nome").value;
+                let email= document.getElementById("email").value;
+                let usuarios= localStorage.getItem("cadastros");
+               if(usuarios){
+                   usuarios = JSON.parse(usuarios); 
+
+                   let text = "<tr>";
+                        for (let i = 0; i < usuarios.length; i++){
+                            if(usuarios[i].nome==nome || usuarios[i].email==email){
+                                text += "<td>" + usuarios[i].nome + "</td>" + 
+                                        "<td>" + usuarios[i].idade + "</td>" +
+                                        "<td>" + usuarios[i].email + "</td>";
+                                       }
+    
+                        }
+                         text += "</tr>"; 
+                        document.getElementById("tabela").innerHTML += text;
+                    }
+                }
+	</script>
+
+</body>
+</html>

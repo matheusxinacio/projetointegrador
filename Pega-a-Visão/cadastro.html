@@ -14,13 +14,13 @@
 
         <script>
             
-            if (!localStorage.getItem("Clientes")){
-                localStorage.setItem("Clientes", "[]");
+            if (!localStorage.getItem("Usuarios")){
+                localStorage.setItem("Usuarios", "[]");
             }
             
             
             function cadastrar(){
-                let cadastros= JSON.parse(localStorage.getItem("Clientes"));
+                let cadastros= JSON.parse(localStorage.getItem("Usuarios"));
                 let dados={};
                 dados.nome=document.getElementById("nome").value;
                 dados.sobrenome=document.getElementById("sobrenome").value;
@@ -30,24 +30,24 @@
                 cadastros.push(dados);
  
                 let myJSON= JSON.stringify(cadastros);
-                localStorage.setItem("Clientes", myJSON);
+                localStorage.setItem("Usuarios", myJSON);
              console.log(cadastros);   
                 alert("Cadastro Confirmado!")
             }
             function recuperarDados(){
-                let clientes= localStorage.getItem("Clientes");
-                if(clientes){
-                   clientes = JSON.parse(clientes); 
+                let usuarios= localStorage.getItem("Usuarios");
+                if(usuarios){
+                   usuarios = JSON.parse(usuarios); 
 
                     let texto="<ul>";
-                    for (let i=0; i<clientes.length; i++){
-                        texto+= "<li>" + clientes[i].nome +" "+ clientes[i].sobrenome +", " + clientes[i].tipo + "</li>";
+                    for (let i=0; i<usuarios.length; i++){
+                        texto+= "<li>" + usuarios[i].nome +" "+ usuarios[i].sobrenome +", " + usuarios[i].idade + " anos, " + usuarios[i].tipo + "</li>";
                                            }
                     document.getElementById("resposta").innerHTML= texto + "</ul>";
 
                 }
                 else{
-                    document.getElementById("resposta").innerHTML="Nenhum cliente cadastrado :(";
+                    document.getElementById("resposta").innerHTML="Nenhum usuário cadastrado :(";
                 }
             }
 
