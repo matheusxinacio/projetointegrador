@@ -27,7 +27,7 @@
 					<li><a href="artistas.html">Nossos Artistas</a></li>
 					<li><a href="#">Contratar um Artista</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
-					<li><a href="#">Contato</a></li>
+					<li><a href="login.html">Login</a></li>
 				</ul>
 		</nav>
 
@@ -104,7 +104,7 @@
             function recuperarDados(){
                 let nome= document.getElementById("nome").value;
                 let email= document.getElementById("email").value;
-                let usuarios= localStorage.getItem("cadastros");
+                let usuarios= localStorage.getItem("Usuarios");
                if(usuarios){
                    usuarios = JSON.parse(usuarios); 
 

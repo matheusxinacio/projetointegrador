@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Pega a Visão</title>
+	<link rel="stylesheet" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta name="keywords" content="Agência Digital, divulgação, artistas, sites">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Alunos BSI">
+	<link rel="icon" href="img/icon.png">
+
+</head>
+<body>
+	<header class="cabecalho container">
+		<a href="index.html"><h1 class="logo">Pega a Visão</h1></a>
+		<button class="bt-menu bg-gradient"><i class="fa fa-bars fa-lg"> </i></button>
+		<nav class="menu">
+			<a class="bt-close"><i class="fa fa-times"></i></a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="artistas.html">Nossos Artistas</a></li>
+					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="sobre.html">Quem Somos?</a></li>
+					<li><a href="login.html"></a></li>
+				</ul>
+		</nav>
+
+
+	</header>
+	<div class="banner-sobre container">
+		<div class="title">
+			<h2> Login </h2>
+		</div>
+	</div>
+	<main class="mainlogin container">
+		<article class="artista bg-white radius articlelogin">
+			
+			<div class="inner">
+				
+			</div>
+		</article>
+		<article class="artista bg-white radius">
+			
+			<div class="inner">
+				<h2>Faça Login</h2>
+				<form>
+					<label for="email">Email:</label>
+					<input class="input-form" type="text" id="email">
+					<label for="senha">Senha:</label>
+					<input  class="input-form" type="password" id="senha">
+					<button class="btform" type="button" onclick="checarCadastro()">Login</button>
+					<p id="alerta"></p>
+				</form>				
+				
+			</div>
+		</article>
+		<article class="artista bg-white radius articlelogin">
+			
+			<div class="inner">
+				
+			</div>
+		</article>
+	
+	</main>
+	<!-- NEWSLETTER-->
+	<section class="newsletter container bg-black">
+		<h2> Inscreva-se! </h2>
+		<h3> Receba novidades sobre novos artistas da plataforma!</h3>
+		<form>
+			<input class="bg-black radius" type="email" name="email" placeholder="Seu email">
+			<button class="bg-white radius">Cadastrar</button>
+		</form>
+
+	<!-- rodapé -->
+	<footer class="rodape container bg-gradient">
+		<div class="icones">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-google"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		<p class="copyright">
+			Copyright © PegaVisão 2019. All Rights Reserved.
+		</p>
+	</footer>		
+	</section>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript">
+		function checarCadastro() {
+		let email = document.getElementById("email").value;
+		let senha = document.getElementById("senha").value;
+		let antesDepoisArroba = email.split("@");
+		let senhaSplitada = senha.split("");
+		let checkNum = 0;
+		document.getElementById("alerta").innerText = "Logado!";
+		if (email.split(" ").length !== 1) {
+		document.getElementById("alerta").innerText = "O email inserido contém espaços."
+		}
+		if (antesDepoisArroba.length !== 2) {
+		document.getElementById("alerta").innerText = "O email inserido contém mais de um @."
+		}
+		if (antesDepoisArroba.length == 1) {
+		document.getElementById("alerta").innerText = "O email inserido não contém @."
+		}
+		if (antesDepoisArroba.length == 2) {
+		let antesArroba = antesDepoisArroba[0].split("");
+		let depoisArroba = antesDepoisArroba[1].split("");
+		if (antesArroba.length < 3) {
+		document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres antes do @."
+		}
+		if (depoisArroba.length < 3) {
+		document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres após do @."
+		}
+		if (depoisArroba.indexOf(".") == -1) {
+		document.getElementById("alerta").innerText = "O email inserido não possui o domínio após do @."
+		}
+		if (depoisArroba[0] == ".") {
+		document.getElementById("alerta").innerText = "O email inserido não possui um caractere antes do ponto."
+		}
+		if (depoisArroba.indexOf(".") !== -1) {
+		let temp = depoisArroba.indexOf(".");
+		if (depoisArroba[temp + 1] == undefined || depoisArroba[temp + 2] == undefined)
+		document.getElementById("alerta").innerText = "O email inserido não possui caracteres após o domínio.";
+		}
+		}
+		if (senha.split("").length < 8) {
+		document.getElementById("alerta").innerText = "Sua senha precisa ter pelo menos 8 caracteres.";
+		}
+		if ((senha.split("0").length == 1) && (senha.split("1").length == 1) && (senha.split("2").length == 1) && (senha.split("3").length == 1) && (senha.split("4").length == 1) && (senha.split("5").length == 1) && (senha.split("6").length == 1) && (senha.split("7").length == 1) && (senha.split("8").length == 1) && (senha.split("9").length == 1)) {
+		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos um número.";
+		}
+		for (let i = 0; i < senha.length; i++) {
+		let stop = 0;
+		if (senha.toLowerCase() !== senha) {
+		} else {
+		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra maiúscula.";
+		}
+		if (senha.toUpperCase() !== senha) {
+		} else {
+		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra minúscula.";
+		}
+		}
+		}
+	</script>
+
+</body>
+</html>
