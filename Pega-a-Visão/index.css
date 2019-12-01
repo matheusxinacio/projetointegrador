@@ -227,6 +227,17 @@ img
 .estrelas input[type=radio]:checked ~ label i.fa:before {
   color: #CCC;
 }    
+#contratelink
+{
+	color: purple;
+	text-decoration: underline;
+}
+#agenda
+{
+	list-style:square;
+	margin: 10px;
+	padding: 5px;
+}
 
 /* ===================== */
 .title

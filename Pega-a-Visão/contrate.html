@@ -47,40 +47,30 @@
 			<a href=""><img src="../Pega-a-Visão/img/mj.jpg" alt="Michael Jackson"></a>
 			<div class="inner">
 				<a href="#">Michael Jackson</a>
-				<h4>Considerado por muitos o maior artista de todos os tempos. </h4>
-				<p>Michael Jackson consolidou sua carreira na música com a gente antes de se tornar o Rei do Pop, assim como os outros quatro integrantes do antigo The Jackson 5. Confira seu perfil.</p>
 			</div>
 		</article>
 		<article class="artista bg-white radius">
 			<div class="inner">
-			<h2>Michael Jackson</h2>
-			<p> Michael Jackson foi um cantor, compositor, dançarino, produtor musical (1958-2009)
+			<h2>Agenda de Michael Jackson</h2>
+			<h4>O Artista tem os seguintes dias disponíveis:</h4>
+			<ul id="agenda">
+				<li> 25.12 especial de natal</li>
+				<li>  01.01 show de ano novo </li>
+			</ul>
+			<form>
+                <label for="dias">Selecione o dia do evento no formato dia.mês:</label>
+                    <input class="input-form" type="number" id="dias">
+                <label>Deseja contratar o artista por quantas horas? </label>
+                    <input class="input-form" type="number" id="p1">
+                        
 
-			Chamado de “Rei do Pop”, o cantor e compositor Michael Jackson nasceu em Gary, Indiana, nos EUA, em 29 de agosto de 1958. Quando criança, foi o cantor principal do Jackson 5, o grupo de sua família. Com sua carreira solo, Michael se tornou uma das maiores estrelas pop de todos os tempos. Em 2009, sua morte gerou controvérsia e foi, posteriormente, considerada homicídio por parte de seu médico.</p><br>
-
-			<h2>Origem</h2>
-			<p>Michael Joseph Jackson nasceu em 29 de agosto de 1958 em Gary, Indiana, de uma família afro-americana da classe trabalhadora. Seu pai, Joseph Jackson, trabalhava como operador de guindaste para sustentar sua família. Acreditando que seus filhos possuíam talento, ele formou um grupo no final dos anos 60, com Michael e seus irmãos, o Jackson 5. Michael era o cantor principal e impressionava as plateias com seu talento e sua voz de grande alcance.</p></div>
+                <button class="btform" type="button" onclick="contrata()">Contratar</button><br>
+                    <h2>Custo final:</h2>
+                     <p id="resposta"></p>
+            </form>
+			
 		</article>
-		<article class="artista bg-white radius">
-			<div class="inner">
-			<h2> Avalie o Artista:</h2>
-			<div class="estrelas">
-	             <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-	             <label for="cm_star-1"><i class="fa"></i></label>
-	             <input type="radio" id="cm_star-1" name="fb" value="1"/>
-	             <label for="cm_star-2"><i class="fa"></i></label>
-	             <input type="radio" id="cm_star-2" name="fb" value="2"/>
-	             <label for="cm_star-3"><i class="fa"></i></label>
-	             <input type="radio" id="cm_star-3" name="fb" value="3"/>
-	             <label for="cm_star-4"><i class="fa"></i></label>
-	             <input type="radio" id="cm_star-4" name="fb" value="4"/>
-	             <label for="cm_star-5"><i class="fa"></i></label>
-	             <input type="radio" id="cm_star-5" name="fb" value="5"/>
-	           </div><br>
-	           <h2>Contrate o artista <a id="contratelink" href="contrate.html">agora!</a></h2>
-			</div>
-		</article>
-
+		
 		
 	</main>
 	<!-- NEWSLETTER-->
@@ -111,6 +101,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		 function contrata(){
+                    let p1 = (document.getElementById("p1").value)*5000;
+                    let dias = document.getElementById("dias").value;
+                    let custofinal = p1; 
+                    
+                    document.getElementById("resposta").innerHTML= "O custo final da contratação pro evento no dia " + dias + " é R$" + custofinal.toFixed(2) + ". Proposta enviada ao artista!";
+                }
+	</script>
 
 </body>
 </html>
