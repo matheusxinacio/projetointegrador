@@ -22,9 +22,9 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="artistas.html">Nossos Artistas</a></li>
-					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="pesquisa.html">Pesquisar Usuários</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
-					<li><a href="login.html"></a></li>
+					<li><a href="login.html">Login</a></li>
 				</ul>
 		</nav>
 
@@ -52,6 +52,7 @@
 					<label for="senha">Senha:</label>
 					<input  class="input-form" type="password" id="senha">
 					<button class="btform" type="button" onclick="checarCadastro()">Login</button>
+					<h3>Não tem cadastro? Faça <a class="link" href="cadastro.html">aqui</a></h3>
 					<p id="alerta"></p>
 				</form>				
 				
@@ -100,54 +101,56 @@
 		let senhaSplitada = senha.split("");
 		let checkNum = 0;
 		document.getElementById("alerta").innerText = "Logado!";
-		if (email.split(" ").length !== 1) {
-		document.getElementById("alerta").innerText = "O email inserido contém espaços."
-		}
-		if (antesDepoisArroba.length !== 2) {
-		document.getElementById("alerta").innerText = "O email inserido contém mais de um @."
-		}
-		if (antesDepoisArroba.length == 1) {
-		document.getElementById("alerta").innerText = "O email inserido não contém @."
-		}
-		if (antesDepoisArroba.length == 2) {
-		let antesArroba = antesDepoisArroba[0].split("");
-		let depoisArroba = antesDepoisArroba[1].split("");
-		if (antesArroba.length < 3) {
-		document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres antes do @."
-		}
-		if (depoisArroba.length < 3) {
-		document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres após do @."
-		}
-		if (depoisArroba.indexOf(".") == -1) {
-		document.getElementById("alerta").innerText = "O email inserido não possui o domínio após do @."
-		}
-		if (depoisArroba[0] == ".") {
-		document.getElementById("alerta").innerText = "O email inserido não possui um caractere antes do ponto."
-		}
-		if (depoisArroba.indexOf(".") !== -1) {
-		let temp = depoisArroba.indexOf(".");
-		if (depoisArroba[temp + 1] == undefined || depoisArroba[temp + 2] == undefined)
-		document.getElementById("alerta").innerText = "O email inserido não possui caracteres após o domínio.";
-		}
-		}
-		if (senha.split("").length < 8) {
-		document.getElementById("alerta").innerText = "Sua senha precisa ter pelo menos 8 caracteres.";
-		}
-		if ((senha.split("0").length == 1) && (senha.split("1").length == 1) && (senha.split("2").length == 1) && (senha.split("3").length == 1) && (senha.split("4").length == 1) && (senha.split("5").length == 1) && (senha.split("6").length == 1) && (senha.split("7").length == 1) && (senha.split("8").length == 1) && (senha.split("9").length == 1)) {
-		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos um número.";
-		}
-		for (let i = 0; i < senha.length; i++) {
-		let stop = 0;
-		if (senha.toLowerCase() !== senha) {
-		} else {
-		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra maiúscula.";
-		}
-		if (senha.toUpperCase() !== senha) {
-		} else {
-		document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra minúscula.";
-		}
-		}
-		}
+
+				if (email.split(" ").length !== 1) {
+					document.getElementById("alerta").innerText = "O email inserido contém espaços."
+				}
+				if (antesDepoisArroba.length !== 2) {
+					document.getElementById("alerta").innerText = "O email inserido contém mais de um @."
+				}
+				if (antesDepoisArroba.length == 1) {
+					document.getElementById("alerta").innerText = "O email inserido não contém @."
+				}
+				if (antesDepoisArroba.length == 2) {
+					let antesArroba = antesDepoisArroba[0].split("");
+					let depoisArroba = antesDepoisArroba[1].split("");
+				if (antesArroba.length < 3) {
+					document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres antes do @."
+				}
+				if (depoisArroba.length < 3) {
+					document.getElementById("alerta").innerText = "O email inserido possui menos que três caracteres após do @."
+				}
+				if (depoisArroba.indexOf(".") == -1) {
+					document.getElementById("alerta").innerText = "O email inserido não possui o domínio após do @."
+				}
+				if (depoisArroba[0] == ".") {
+					document.getElementById("alerta").innerText = "O email inserido não possui um caractere antes do ponto."
+				}
+				if (depoisArroba.indexOf(".") !== -1) {
+					let temp = depoisArroba.indexOf(".");
+				if (depoisArroba[temp + 1] == undefined || depoisArroba[temp + 2] == undefined)
+					document.getElementById("alerta").innerText = "O email inserido não possui caracteres após o domínio.";
+				}
+				}
+				if (senha.split("").length < 8) {
+					document.getElementById("alerta").innerText = "Sua senha precisa ter pelo menos 8 caracteres.";
+				}
+				if ((senha.split("0").length == 1) && (senha.split("1").length == 1) && (senha.split("2").length == 1) && (senha.split("3").length == 1) && (senha.split("4").length == 1) && (senha.split("5").length == 1) && (senha.split("6").length == 1) && (senha.split("7").length == 1) && (senha.split("8").length == 1) && (senha.split("9").length == 1)) {
+					document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos um número.";
+				}
+				for (let i = 0; i < senha.length; i++) {
+					let stop = 0;
+					if (senha.toLowerCase() !== senha) {
+					} else {
+				
+					document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra maiúscula.";
+					}
+					if (senha.toUpperCase() !== senha) {
+					} else {
+					document.getElementById("alerta").innerText = "Sua senha precisa conter pelo menos uma letra minúscula.";
+				}
+				}
+				}
 	</script>
 
 </body>

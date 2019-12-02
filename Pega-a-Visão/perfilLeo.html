@@ -22,7 +22,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="artistas.html">Nossos Artistas</a></li>
-					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="pesquisa.html">Pesquisar Usuários</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
 					<li><a href="login.html">Login</a></li>
 				</ul>
@@ -76,8 +76,18 @@
 	             <input type="radio" id="cm_star-4" name="fb" value="4"/>
 	             <label for="cm_star-5"><i class="fa"></i></label>
 	             <input type="radio" id="cm_star-5" name="fb" value="5"/>
-	           </div>
+	           </div><br>
+	           	<h2>Comentários:</h2>
+                <form onsubmit="return false;">
+                    <label for="name"> Digite seu nick:</label> 
+                    	<input class="inputquadrado" type = "text" id = "name">
+                    <label for="comment">Feedback:</label>
+                    	<input class="inputquadrado" type= "text" id="comment"> 
+                    	<input class="enviaComentario" type="button" onclick ="enviarComentario()" value="Publicar"></p>
+        		</form>
+        		<div class="divcomment" id="resposta"></div>
 			</div>
+
 		</article>
 
 		
@@ -110,6 +120,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		let comentariosLista = [];
+        function enviarComentario(){
+            let nick = document.getElementById("name").value;
+            let coment = document.getElementById("comment").value;
+            let comentario = nick + ": " + coment;
+            if (comentario!="") comentariosLista[comentariosLista.length] = comentario;
+            let texto = "<ol>"; 
+            for (let i=0; i<comentariosLista.length; i++) {
+                texto += "<li>" + comentariosLista[i] + "</li>";
+            }
+            texto += "</ol>";
+            document.getElementById("resposta").innerHTML = texto;
+        }
+	</script>
 
 </body>
 </html>

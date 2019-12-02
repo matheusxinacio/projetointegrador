@@ -25,7 +25,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="artistas.html">Nossos Artistas</a></li>
-					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="pesquisa.html">Pesquisar Usuários</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
 					<li><a href="login.html">Login</a></li>
 				</ul>
@@ -53,15 +53,18 @@
 					<p>Por nome: <input class="input-form" type="text" id="nome"></p>
 			        <p>Por email: <input class="input-form" type="text" id="email"></p>
 			       
-			        <button  class="btform" onclick="recuperarDados()">ver todos os cadastrados:</button>
+			        <button  class="btform" onclick="recuperarDados()"> Pesquisar </button>
 			        <p id="resposta"></p>
 
-			        <table border="1" id="tabela">
-			            <tr>
-			                <th>Nome</th>
-			                <th>Idade</th>
-			                <th>Email</th>
-			            </tr>
+			        <table class="tabelapesquisa"  id="tabela">
+			        	<tbody id="IdTbody">
+			        		<tr>
+			                	<th>Nome</th>
+			                	<th>Idade</th>
+			                	<th>Email</th>
+			            	</tr>	
+			        	</tbody>
+			            
 			    
 			        </table>
 			</div>
@@ -97,27 +100,31 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/jquery.js"></script>
 		<script type="text/javascript">
-		  if (!localStorage.getItem("cadastros")){
-                localStorage.setItem("cadastros", "[]");
+		  if (!localStorage.getItem("Usuarios")){
+                localStorage.setItem("Usuarios", "[]");
             }
 
             function recuperarDados(){
                 let nome= document.getElementById("nome").value;
                 let email= document.getElementById("email").value;
                 let usuarios= localStorage.getItem("Usuarios");
-               if(usuarios){
-                   usuarios = JSON.parse(usuarios); 
 
-                   let text = "<tr>";
-                        for (let i = 0; i < usuarios.length; i++){
+
+               if(usuarios){
+                   usuarios = JSON.parse(usuarios);
+
+                   //document.getElementById("IdTbody").innerHTML = "";
+                   let text = "<tbody>";
+
+                         for (let i = 0; i < usuarios.length; i++){
                             if(usuarios[i].nome==nome || usuarios[i].email==email){
-                                text += "<td>" + usuarios[i].nome + "</td>" + 
+                                text += "<tr><td>" + usuarios[i].nome + "</td>" + 
                                         "<td>" + usuarios[i].idade + "</td>" +
-                                        "<td>" + usuarios[i].email + "</td>";
+                                        "<td>" + usuarios[i].email + "</td></tr>";
                                        }
     
                         }
-                         text += "</tr>"; 
+                         text += "</tbody>"; 
                         document.getElementById("tabela").innerHTML += text;
                     }
                 }

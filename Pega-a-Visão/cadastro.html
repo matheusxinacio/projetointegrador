@@ -18,7 +18,7 @@
                 localStorage.setItem("Usuarios", "[]");
             }
             
-            
+
             function cadastrar(){
                 let cadastros= JSON.parse(localStorage.getItem("Usuarios"));
                 let dados={};
@@ -63,7 +63,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="artistas.html">Nossos Artistas</a></li>
-					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="pesquisa.html">Pesquisar Usuários</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
 					<li><a href="login.html">Login</a></li>
 				</ul>
@@ -100,7 +100,8 @@
 					<input  class="input-form"id="email"class="input-form" type="text" placeholder="xxxx@dom.com">
 
 					<label class="labelform" for="tipoUser">Você é um artista ou contratante?</label>
-					<input  class="input-form" type="text" id="tipoUser">
+					<input  class="input-form"type="text" id="tipoUser">
+					
 
 
 					<button class="btform" onclick="cadastrar()" type="button">Cadastrar</button>

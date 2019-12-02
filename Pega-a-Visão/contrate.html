@@ -22,7 +22,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="artistas.html">Nossos Artistas</a></li>
-					<li><a href="#">Contratar um Artista</a></li>
+					<li><a href="pesquisa.html">Pesquisar Usuários</a></li>
 					<li><a href="sobre.html">Quem Somos?</a></li>
 					<li><a href="login.html">Login</a></li>
 				</ul>
@@ -53,13 +53,12 @@
 			<div class="inner">
 			<h2>Agenda de Michael Jackson</h2>
 			<h4>O Artista tem os seguintes dias disponíveis:</h4>
-			<ul id="agenda">
-				<li> 25.12 especial de natal</li>
-				<li>  01.01 show de ano novo </li>
-			</ul>
+			<button class="btform" onclick="agenda()">Agenda</button>
+				<p id="agenda"></p>
+
 			<form>
-                <label for="dias">Selecione o dia do evento no formato dia.mês:</label>
-                    <input class="input-form" type="number" id="dias">
+                <label for="dias">Selecione o dia do evento no formato Dia/Mês/Ano:</label>
+                    <input class="input-form" type="text" id="dias">
                 <label>Deseja contratar o artista por quantas horas? </label>
                     <input class="input-form" type="number" id="p1">
                         
@@ -107,7 +106,25 @@
                     let dias = document.getElementById("dias").value;
                     let custofinal = p1; 
                     
-                    document.getElementById("resposta").innerHTML= "O custo final da contratação pro evento no dia " + dias + " é R$" + custofinal.toFixed(2) + ". Proposta enviada ao artista!";
+                    document.getElementById("resposta").innerHTML= "O custo final da contratação pro evento no dia " + dias + " é R$" + custofinal.toFixed(2) + ". Proposta enviada ao artista! Entre em contato em mj@gmail.com!";
+                }
+
+         function agenda(){
+                let vet, vetLen, texto, i;
+	            vet = ["25/12 especial de natal","01/01 Show de Ano Novo."];
+	            vetLen = vet.length;
+
+
+	            texto = "<ul>";
+	            for (i = 0; i < vetLen; i++)
+	            {
+	                texto += "<li>" + vet[i] + "</li>";
+
+	            }
+	            texto += "</ul>";
+	            document.getElementById("agenda").innerHTML = texto;  
+    
+                    
                 }
 	</script>
 
